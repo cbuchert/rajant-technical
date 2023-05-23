@@ -15,7 +15,7 @@ const List: FC<Props> = ({ items }) => {
   const [ animationParent ] = useAutoAnimate()
 
   return <div className={"mb-10"}>
-    <p className={"text-md text-slate-400 ml-6 mb-4"}>
+    <p className={"text-right text-md text-slate-400 mr-6 mb-4"}>
       {items.length} {pluralize("item", items.length)}
     </p>
     <ol className={styles.items} ref={animationParent}>

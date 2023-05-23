@@ -10,7 +10,7 @@ import styles from "./NewListItem.module.css"
 const NewListItem: FC = () => {
   const schema = z.object({
     text: z.preprocess((u: unknown) => typeof u === "string" ? u.trim() : u, z.string()
-    .nonempty("Please enter a list item.")),
+    .nonempty("Please enter a valid list item.")),
   })
   type FormSchemaType = z.infer<typeof schema>
 
@@ -37,7 +37,7 @@ const NewListItem: FC = () => {
         type="submit"><RiAddLine className={"h-6 w-6"}/>
       </button>
     </div>
-    <p className={"text-md text-red-400"}>{errors.text?.message}&nbsp;</p>
+    <p className={"text-md text-red-400 ml-6 mt-2"}>{errors.text?.message}&nbsp;</p>
   </form>
 }
 

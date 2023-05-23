@@ -2,8 +2,10 @@
   @apply flex justify-between;
   @apply hover:bg-slate-50;
   @apply transition-colors duration-200;
-  @apply px-3 py-2
+  @apply px-3 py-3;
+  @apply mx-3;
 }
 
 .text {
+  @apply text-slate-800;
 }
