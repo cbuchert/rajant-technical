@@ -17,7 +17,6 @@ const NewListItem: FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormSchemaType>({
     resolver: zodResolver(schema),
   })
-  console.log(errors)
 
   const dispatch = useAppDispatch()
   const onSubmit = ({ text }: FormSchemaType) => {
