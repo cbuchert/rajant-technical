@@ -4,10 +4,12 @@
   @apply rounded-lg;
   @apply p-4;
   @apply container;
+  @apply mx-auto md:mt-4 lg:mt-8;
 }
 
 .heading {
-  @apply text-2xl;
+  @apply text-center;
+  @apply text-4xl text-slate-600;
   @apply font-bold;
-  @apply mb-4;
+  @apply mb-8;
 }
