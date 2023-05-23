@@ -5,7 +5,7 @@ import NewListItem from "./components/NewListItem"
 
 const App: FC = () => (
   <div className={styles.app}>
-    <h1 className={styles.heading}>Rajant Take Home Assessment - Lists</h1>
+    <h1 className={styles.heading}>Rajant Take Home Assessment</h1>
     <List/>
     <NewListItem/>
   </div>

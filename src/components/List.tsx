@@ -14,8 +14,10 @@ type Props = {
 const List: FC<Props> = ({ items }) => {
   const [ animationParent ] = useAutoAnimate()
 
-  return <div>
-    {items.length} {pluralize("item", items.length)}
+  return <div className={"mb-10"}>
+    <p className={"text-md text-slate-400 ml-6 mb-4"}>
+      {items.length} {pluralize("item", items.length)}
+    </p>
     <ol className={styles.items} ref={animationParent}>
       {items.map((item) => <ListItem item={item} key={item.id}/>)}
     </ol>
