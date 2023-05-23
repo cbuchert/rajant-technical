@@ -1,7 +1,11 @@
 import { FC, FormEvent } from "react"
+import { RiAddLine } from "react-icons/ri"
+import { z } from "zod"
 import { useAppDispatch } from "../app/hooks"
+import styles from "./NewListItem.module.css"
 
 const NewListItem: FC = () => {
+  const schema = z.string().nonempty("Please enter a value")
   const dispatch = useAppDispatch()
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
@@ -16,9 +20,9 @@ const NewListItem: FC = () => {
     })
   }
 
-  return <form onSubmit={handleSubmit}>
-    <input name={"value"} type="text"/>
-    <button type="submit">Add</button>
+  return <form onSubmit={handleSubmit} className={styles.container}>
+    <input className={styles.input} name={"value"} type="text"/>
+    <button className={styles.submit} type="submit"><RiAddLine className={"h-6 w-6"}/></button>
   </form>
 }
 

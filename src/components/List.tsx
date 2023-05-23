@@ -1,8 +1,10 @@
+import { useAutoAnimate } from "@formkit/auto-animate/react"
 import { FC } from "react"
 import { connect } from "react-redux"
 import { ListState } from "../features/list/list-slice"
 import { ListItemType } from "../types/ListItemType"
 import { pluralize } from "../utils/pluralize"
+import styles from "./List.module.css"
 import ListItem from "./ListItem"
 
 type Props = {
@@ -10,10 +12,14 @@ type Props = {
 }
 
 const List: FC<Props> = ({ items }) => {
-  return <ol>
+  const [ animationParent ] = useAutoAnimate()
+
+  return <div>
     {items.length} {pluralize("item", items.length)}
-    {items.map((item) => <ListItem item={item} key={item.id}/>)}
-  </ol>
+    <ol className={styles.items} ref={animationParent}>
+      {items.map((item) => <ListItem item={item} key={item.id}/>)}
+    </ol>
+  </div>
 }
 
 function mapStateToProps(state: { list: ListState }) {

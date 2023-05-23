@@ -1,4 +1,5 @@
 import { FC } from "react"
+import { RiCloseLine } from "react-icons/ri"
 import { useAppDispatch } from "../app/hooks"
 import { ListItemType } from "../types/ListItemType"
 import styles from "./ListItem.module.css"
@@ -17,7 +18,7 @@ const ListItem: FC<Props> = ({ item }) => {
 
   return <li className={styles.item}>
     <div className={styles.item}>{item.text}</div>
-    <button className={styles.button} type={"button"} onClick={handleDelete}>x</button>
+    <button className={styles.button} type={"button"} onClick={handleDelete}><RiCloseLine className={"h-6 w-6"}/></button>
   </li>
 }
 
