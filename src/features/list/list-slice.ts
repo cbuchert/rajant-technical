@@ -1,12 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { ListItemType } from "../../types/ListItemType"
 
-interface ListState {
+export interface ListState {
   items: ListItemType[];
 }
 
 const initialState: ListState = {
-  items: [],
+  items: [
+    {
+      id: new Date().toISOString(),
+      text: "Item 1",
+    }
+  ],
 }
 
 const listSlice = createSlice({
@@ -14,9 +19,9 @@ const listSlice = createSlice({
   initialState,
   reducers: {
     addItem(state, action: PayloadAction<ListItemType>) {
-      state.items.push(action.payload)
+      state.items = [...state.items, action.payload]
     },
-    removeItem(state, action: PayloadAction<number>) {
+    removeItem(state, action: PayloadAction<string>) {
       state.items = state.items.filter(item => item.id !== action.payload)
     },
   },
