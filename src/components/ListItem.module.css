@@ -7,12 +7,3 @@
 
 .text {
 }
-
-.button {
-  @apply flex items-center justify-center;
-  @apply w-8 h-8;
-  @apply rounded;
-  @apply bg-gray-200 hover:bg-gray-300 active:bg-gray-400;
-  @apply text-gray-600 hover:text-gray-700;
-  @apply transition-colors duration-200;
-}

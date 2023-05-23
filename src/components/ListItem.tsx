@@ -19,7 +19,9 @@ const ListItem: FC<Props> = ({ item }) => {
 
   return <li className={styles.item}>
     <div className={styles.item}>{item.text}</div>
-    <button className={styles.button} type={"button"} onClick={handleDelete}><RiCloseLine className={"h-6 w-6"}/></button>
+    <button
+      className={"flex items-center justify-center h-9 w-9 rounded bg-slate-200 hover:bg-red-100 active:bg-slate-300 text-slate-600 hover:text-red-500 transition-colors duration-200"}
+      type={"button"} onClick={handleDelete}><RiCloseLine className={"h-6 w-6"}/></button>
   </li>
 }
 
