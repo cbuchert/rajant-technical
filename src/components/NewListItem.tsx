@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { FC } from "react"
+import { FC, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { RiAddLine } from "react-icons/ri"
 import { z } from "zod"
@@ -14,9 +14,15 @@ const NewListItem: FC = () => {
   })
   type FormSchemaType = z.infer<typeof schema>
 
-  const { register, handleSubmit, formState: { errors } } = useForm<FormSchemaType>({
+  const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful } } = useForm<FormSchemaType>({
     resolver: zodResolver(schema),
   })
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+     reset({text: ""})
+    }
+  }, [isSubmitSuccessful])
 
   const dispatch = useAppDispatch()
   const onSubmit = ({ text }: FormSchemaType) => {
