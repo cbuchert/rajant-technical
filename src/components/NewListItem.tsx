@@ -39,7 +39,7 @@ const NewListItem: FC = () => {
     <div className={styles.container}>
       <input className={styles.input} type="text" {...register("text")}/>
       <button
-        className={"rounded px-6 py-2 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white hover:text-blue-50 transition-colors duration-200"}
+        className={"rounded px-6 py-2 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white hover:text-blue-50 transition-colors duration-200 flex justify-center"}
         type="submit"><RiAddLine className={"h-6 w-6"}/>
       </button>
     </div>
