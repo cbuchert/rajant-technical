@@ -1,3 +1,6 @@
+# A quick note about the styling inconsistencies
+I had this  mad idea to use `@apply` to put Tailwind classes directly in the CSS in hopes that it would clean things up a bit. Sadly, this had a couple of drawbacks (chiefly among which is that the CSS reset is more specific around button backgrounds for some reason). For this reason, there's some inconsistency around how things are styled. I know, it kind of bugs.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
