@@ -21,11 +21,11 @@ const listSlice = createSlice({
     addItem(state, action: PayloadAction<ListItemType>) {
       state.items = [...state.items, action.payload]
     },
-    removeItem(state, action: PayloadAction<string>) {
+    deleteItem(state, action: PayloadAction<string>) {
       state.items = state.items.filter(item => item.id !== action.payload)
     },
   },
 })
 
-export const { addItem, removeItem } = listSlice.actions
+export const { addItem, deleteItem } = listSlice.actions
 export default listSlice.reducer
