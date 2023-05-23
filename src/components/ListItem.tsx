@@ -1,6 +1,7 @@
 import { FC } from "react"
 import { RiCloseLine } from "react-icons/ri"
 import { useAppDispatch } from "../app/hooks"
+import { LIST_ACTIONS } from "../features/list/list-slice"
 import { ListItemType } from "../types/ListItemType"
 import styles from "./ListItem.module.css"
 
@@ -11,7 +12,7 @@ const ListItem: FC<Props> = ({ item }) => {
   const dispatch = useAppDispatch()
   const handleDelete = () => {
     dispatch({
-      type: "list/deleteItem",
+      type: LIST_ACTIONS.DELETE_ITEM,
       payload: item.id,
     })
   }

@@ -2,17 +2,19 @@ import { FC, FormEvent } from "react"
 import { RiAddLine } from "react-icons/ri"
 import { z } from "zod"
 import { useAppDispatch } from "../app/hooks"
+import { LIST_ACTIONS } from "../features/list/list-slice"
 import styles from "./NewListItem.module.css"
 
 const NewListItem: FC = () => {
-  const schema = z.string().nonempty("Please enter a value")
+  const schema = z.string()
+  .nonempty("Please enter a value")
   const dispatch = useAppDispatch()
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     const data = new FormData(e.target as HTMLFormElement)
 
     dispatch({
-      type: "list/addItem",
+      type: LIST_ACTIONS.ADD_ITEM,
       payload: {
         id: new Date().toISOString(),
         text: data.get("value") as string,

@@ -1,6 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { ListItemType } from "../../types/ListItemType"
 
+export const LIST_ACTIONS = {
+  ADD_ITEM: "list/addItem",
+  DELETE_ITEM: "list/deleteItem",
+}
+
 export interface ListState {
   items: ListItemType[];
 }
