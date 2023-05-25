@@ -22,7 +22,7 @@ const NewListItem: FC = () => {
     if (isSubmitSuccessful) {
      reset({text: ""})
     }
-  }, [isSubmitSuccessful])
+  }, [isSubmitSuccessful, reset])
 
   const dispatch = useAppDispatch()
   const onSubmit = ({ text }: FormSchemaType) => {
